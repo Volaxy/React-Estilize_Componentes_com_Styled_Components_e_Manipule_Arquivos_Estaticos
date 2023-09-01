@@ -29,3 +29,27 @@ const StyledElement = styled.{NOME_DO_ELEMENTO_HTML}`
 `;
 ```
 * Normalizar o CSS com estilos globais usando **styled-components**.
+
+## 02 - Componentes Iniciais e Fontes
+* Criar e estilizar o componente **Header**.
+* Estruturar o menu da barra lateral.
+* Passar parâmetros para o **styled-components** com:
+```jsx
+...
+<ItemStyle $isCurrentPage={true}>
+    ...
+</ItemStyle>
+...
+```
+* Utilizar JS dentro do **styled-components** com:
+```jsx
+...
+a {
+    color: ${props => props.$isCurrentPage ? "#7b78e5" : "#d9d9d9"};
+    font-family: ${props => props.$isCurrentPage ? "GandhiSans Bold" : "GandhiSans Regular"};
+    text-decoration: none;
+}
+...
+```
+* Criar um item de lista que recebe propriedades de componentização.
+* Importar fontes e defini-las como padrão.

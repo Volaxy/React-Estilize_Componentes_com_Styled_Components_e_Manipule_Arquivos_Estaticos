@@ -1,5 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
+import GandhiSansRegular from "../fonts/GandhiSans-Regular.otf";
+import GandhiSansBold from "../fonts/GandhiSans-Bold.otf";
+
 const Normalize = createGlobalStyle`
     /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -352,4 +355,20 @@ const Normalize = createGlobalStyle`
     }
 `;
 
-export default Normalize;
+const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: "GandhiSans Regular";
+        src: local("GandhiSansRegular"), local("Gandhi Sans Regular"), url(${GandhiSansRegular});
+    }
+
+    @font-face {
+        font-family: "GandhiSans Bold";
+        src: local("GandhiSansBold"), local("Gandhi Sans Bold"), url(${GandhiSansBold});
+    }
+
+    html {
+        font-family: "GandhiSans Regular";
+    }
+`;
+
+export { Normalize, GlobalStyle };

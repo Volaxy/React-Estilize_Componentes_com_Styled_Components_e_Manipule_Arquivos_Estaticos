@@ -53,3 +53,9 @@ a {
 ```
 * Criar um item de lista que recebe propriedades de componentização.
 * Importar fontes e defini-las como padrão.
+
+## 03 - Criando Galeria
+* Montar um layout desktop.
+* Estruturar o código de uma galeria de fotos.
+* Trabalhar com tags dinamicamente.
+* Importar dados de um arquivo estático **.json**.

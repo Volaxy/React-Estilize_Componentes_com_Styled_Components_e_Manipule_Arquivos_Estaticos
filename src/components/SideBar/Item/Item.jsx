@@ -11,7 +11,6 @@ const ItemStyle = styled.li`
     cursor: pointer;
 
     a {
-        /* Para usar variáveis JS dentro do styled-component, coloque "$\{}" seguido de uma função "props => {LÓGICA_DA_FUNÇÃO}" */
         color: ${props => props.$isCurrentPage ? "#7b78e5" : "#d9d9d9"};
         font-family: ${props => props.$isCurrentPage ? "GandhiSans Bold" : "GandhiSans Regular"};
         text-decoration: none;
@@ -20,7 +19,6 @@ const ItemStyle = styled.li`
 
 const Item = ({iconPath, activeIconPath, textContent, isCurrentPage}) => {
     return (
-        // Para passar um parâmetro para o styled-component, coloque "$" seguido do nome da variável e atribua um valor
         <ItemStyle $isCurrentPage={isCurrentPage}>
             <img src={isCurrentPage ? activeIconPath : iconPath} alt="" />
 

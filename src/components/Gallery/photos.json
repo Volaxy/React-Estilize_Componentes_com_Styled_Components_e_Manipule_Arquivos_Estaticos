@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "title": "Large Magellanic Cloud",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-1.png",
+        "tagId": 2
+    },
+    {
+        "id": "2",
+        "title": "Milky Way",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-2.png",
+        "tagId": 2
+    },
+    {
+        "id": "3",
+        "title": "Moon: Last Quarter",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-3.png",
+        "tagId": 3
+    },
+    {
+        "id": "4",
+        "title": "Andromeda Galaxy",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-4.png",
+        "tagId": 2
+    },
+    {
+        "id": "5",
+        "title": "Pistol Star",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-5.png",
+        "tagId": 1
+    },
+    {
+        "id": "6",
+        "title": "Illustration",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-6.png",
+        "tagId": 4
+    },
+    {
+        "id": "7",
+        "title": "Andromeda Galaxy",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-7.png",
+        "tagId": 2
+    },
+    {
+        "id": "8",
+        "title": "Illustration",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-8.png",
+        "tagId": 4
+    },
+    {
+        "id": "9",
+        "title": "Starry sky",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-9.png",
+        "tagId": 1
+    },
+    {
+        "id": "10",
+        "title": "Illustration",
+        "source": "Alura Space",
+        "path": "/images/gallery/photo-10.png",
+        "tagId": 1
+    }
+]

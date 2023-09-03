@@ -23,7 +23,7 @@ const TagButton = styled.button`
 
     border: 2px solid transparent;
     border-radius: 10px;
-    padding: 0.625rem 0.5rem;
+    padding: 1rem 0.5rem;
     box-sizing: border-box;
 
     color: #FFF;

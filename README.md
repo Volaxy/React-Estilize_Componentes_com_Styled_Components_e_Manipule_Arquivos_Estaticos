@@ -59,3 +59,10 @@ a {
 * Estruturar o código de uma galeria de fotos.
 * Trabalhar com tags dinamicamente.
 * Importar dados de um arquivo estático **.json**.
+
+## 04 - Um Modal de Zoom
+* Criar uma janela de diálogo.
+* Trabalhar com eventos de seleção.
+* Posicionar elementos de forma fixa e definir opacidade com rgba.
+* Criar um estado que representa o elemento selecionado.
+* Passar funções através do **props** e usa-las através do `onClick`.

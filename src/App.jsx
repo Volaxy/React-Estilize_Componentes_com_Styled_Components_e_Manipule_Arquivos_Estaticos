@@ -7,8 +7,10 @@ import SideBar from './components/SideBar/SideBar.jsx';
 import Tags from './components/Gallery/Tags/Tags.jsx';
 import Gallery from './components/Gallery/Gallery.jsx';
 import Popular from './components/Popular/Popular.jsx';
+import Dialog from './components/Dialog/Dialog.jsx';
 
 import photos from "./components/Gallery/photos.json";
+import popularPhotos from "./popular.json";
 
 const Wrapper = styled.div`
     background-image: linear-gradient(175deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -57,6 +59,7 @@ const PhotosSection = styled.section`
 
 const App = () => {
     const [galleryPhotos, setGalleryPhotos] = useState(photos);
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
 
     return (
         <Wrapper>
@@ -77,13 +80,15 @@ const App = () => {
                         <Tags />
 
                         <PhotosSection>
-                            <Gallery photos={galleryPhotos} />
+                            <Gallery photos={galleryPhotos} onExpandPhoto={photo => setSelectedPhoto(photo)} />
 
-                            <Popular />
+                            <Popular photos={popularPhotos} />
                         </PhotosSection>
                     </div>
                 </Hero>
             </Main>
+
+            <Dialog selectPhoto={selectedPhoto} />
         </Wrapper>
     )
 }

@@ -66,3 +66,9 @@ a {
 * Posicionar elementos de forma fixa e definir opacidade com rgba.
 * Criar um estado que representa o elemento selecionado.
 * Passar funções através do **props** e usa-las através do `onClick`.
+
+## 05 - Favoritando Imagens
+* Implementar um map que compara dois parâmetros da foto.
+* Criar método de alternar favorito.
+* Aplicar filtro de tag e de pesquisa.
+* Criação do **Footer**.

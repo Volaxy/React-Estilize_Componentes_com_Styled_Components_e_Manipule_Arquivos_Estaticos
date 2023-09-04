@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 
 import MagnifyingGlassIcon from "./assets/images/magnifying-glass.svg";
@@ -20,9 +20,11 @@ const InputFieldStyle = styled.input`
     }
 `;
 
-const InputField = () => {
+const InputField = ({ onTypePhotoName }) => {
     return (
-        <InputFieldStyle placeholder="What are you looking for?" />
+        <InputFieldStyle
+            placeholder="What are you looking for?"
+            onKeyUp={e => onTypePhotoName(e.target.value)} />
     );
 };
 

@@ -13,12 +13,12 @@ const HeaderStyle = styled.header`
     }
 `;
 
-const Header = () => {
+const Header = ({ onTypePhotoName }) => {
     return (
         <HeaderStyle>
             <img src="/images/logo.png" alt="Logotype of the SpaceX" />
 
-            <InputField />
+            <InputField onTypePhotoName={onTypePhotoName} />
         </HeaderStyle>
     );
 }

@@ -25,7 +25,7 @@ const GalleryItem = styled.li`
     overflow: hidden;
 `;
 
-const Gallery = ({ photos = [], onExpandPhoto }) => {
+const Gallery = ({ photos = [], onFavoritePhoto, onExpandPhoto }) => {
     return (
         <section>
             <GalleryTitle>Browse the gallery</GalleryTitle>
@@ -34,7 +34,11 @@ const Gallery = ({ photos = [], onExpandPhoto }) => {
                 {photos.map(photo => {
                     return (
                         <GalleryItem key={photo.id}>
-                            <Photo photo={photo} isExpandedPhoto={false} onExpandPhoto={onExpandPhoto} />
+                            <Photo
+                                photo={photo}
+                                isExpandedPhoto={false}
+                                onFavoritePhoto={onFavoritePhoto}
+                                onExpandPhoto={onExpandPhoto} />
                         </GalleryItem>
                     );
                 })}

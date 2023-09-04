@@ -11,6 +11,7 @@ import Dialog from './components/Dialog/Dialog.jsx';
 
 import photos from "./components/Gallery/photos.json";
 import popularPhotos from "./popular.json";
+import Footer from './components/Footer/Footer.jsx';
 
 const Wrapper = styled.div`
     background-image: linear-gradient(175deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -58,8 +59,34 @@ const PhotosSection = styled.section`
 `;
 
 const App = () => {
-    const [galleryPhotos, setGalleryPhotos] = useState(photos);
+    const [galleryPhotos, setGalleryPhotos] = useState(fillGalleryPhotos());
+    function fillGalleryPhotos() {
+        return photos.map(photo => {
+            return {
+                ...photo,
+                isFavorite: false
+            }
+        })
+    }
+
     const [selectedPhoto, setSelectedPhoto] = useState(null);
+
+    function onFavoritePhoto(photo) {
+        // O "?" so acessa a propriedade caso o objeto não seja nulo
+        if(photo.id === selectedPhoto?.id) {
+            setSelectedPhoto({
+                ...selectedPhoto,
+                isFavorite: !selectedPhoto.isFavorite
+            });
+        }
+
+        setGalleryPhotos(galleryPhotos.map(galleryPhoto => {
+            return {
+                ...galleryPhoto,
+                isFavorite: photo.id === galleryPhoto.id ? !photo.isFavorite : galleryPhoto.isFavorite
+            }
+        }));
+    }
 
     return (
         <Wrapper>
@@ -67,7 +94,7 @@ const App = () => {
             <GlobalStyle />
 
             <Main>
-                <Header />
+                <Header onTypePhotoName={search => setGalleryPhotos(photos.filter(photo => photo.title.toLowerCase().includes(search.toLowerCase())))} />
 
                 <Hero>
                     <SideBar />
@@ -77,10 +104,22 @@ const App = () => {
                             <h1>The most complete gallery in space!</h1>
                         </Banner>
 
-                        <Tags />
+                        <Tags onSelectTag={tag => {
+                            if(tag.id === 0) {
+                                setGalleryPhotos(fillGalleryPhotos());
+
+                                return;
+                            }
+
+                            setGalleryPhotos(photos.filter(photo => photo.tagId === tag.id));
+                        }} />
 
                         <PhotosSection>
-                            <Gallery photos={galleryPhotos} onExpandPhoto={photo => setSelectedPhoto(photo)} />
+                            <Gallery
+                                photos={galleryPhotos}
+                                onFavoritePhoto={onFavoritePhoto}
+                                onExpandPhoto={photo => setSelectedPhoto(photo)}
+                            />
 
                             <Popular photos={popularPhotos} />
                         </PhotosSection>
@@ -88,7 +127,13 @@ const App = () => {
                 </Hero>
             </Main>
 
-            <Dialog selectPhoto={selectedPhoto} />
+            <Footer />
+
+            <Dialog
+                selectPhoto={selectedPhoto}
+                onClose={() => setSelectedPhoto(null)}
+                onFavoritePhoto={onFavoritePhoto}
+            />
         </Wrapper>
     )
 }

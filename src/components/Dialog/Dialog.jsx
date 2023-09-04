@@ -10,6 +10,8 @@ const Overlay = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
+
+    z-index: -1;
 `;
 
 const DialogStyle = styled.dialog`
@@ -42,15 +44,16 @@ const DialogStyle = styled.dialog`
     }
 `;
 
-const Dialog = ({ selectPhoto }) => {
+const Dialog = ({ selectPhoto, onClose, onFavoritePhoto }) => {
     return (
         <>
             {selectPhoto && 
                 <>
-                    <Overlay />
 
-                    <DialogStyle open={!!selectPhoto}>
-                        <Photo photo={selectPhoto} isExpandedPhoto={true} />
+                    <DialogStyle open={!!selectPhoto} onClose={() => onClose()}>
+                        <Overlay />
+
+                        <Photo photo={selectPhoto} isExpandedPhoto={true} onFavoritePhoto={onFavoritePhoto} />
                         
                         <form method="dialog">
                             <button className="close-button"><img src="/images/icons/close.png" alt="Close Icon" /></button>

@@ -1,9 +1,13 @@
 import React from 'react';
 import { styled } from 'styled-components';
 
+import tags from "../Tags/tags.json";
+
 const PhotoStyle = styled.figure`
     display: grid;
     grid-template-rows: 1fr auto;
+
+    position: relative;
 
     margin: 0;
 
@@ -11,6 +15,20 @@ const PhotoStyle = styled.figure`
         width: 100%;
 
         object-fit: cover;
+    }
+
+    .tag {
+        background-color: rgba(77, 77, 77, 0.37);
+        
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+
+        color: white;
+        font-size: 1.25rem;
     }
     
     figcaption {
@@ -51,10 +69,12 @@ const PhotoStyle = styled.figure`
     }
 `;
 
-const Photo = ({ photo, isExpandedPhoto, onExpandPhoto }) => {
+const Photo = ({ photo, isExpandedPhoto, onFavoritePhoto, onExpandPhoto }) => {
     return (
         <PhotoStyle>
             <img src={photo.path} alt="" />
+
+            <div className="tag">{tags.find(tag => tag.id === photo.tagId)?.title}</div>
 
             <figcaption>
                 <h3>
@@ -63,7 +83,7 @@ const Photo = ({ photo, isExpandedPhoto, onExpandPhoto }) => {
                 </h3>
 
                 <div className="buttons">
-                    <button><img src="/images/icons/favorite.png" alt="Favorite Icon" /></button>
+                    <button onClick={() => onFavoritePhoto(photo)}><img src={`/images/icons/${photo.isFavorite ? "favorite-active" : "favorite"}.png`} alt="Favorite Icon" /></button>
                     {!isExpandedPhoto &&
                         <button onClick={() => onExpandPhoto(photo)}><img src="/images/icons/expand.png" alt="Expand Icon" /></button>
                     }

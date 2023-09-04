@@ -41,13 +41,22 @@ const TagButton = styled.button`
     }
 `;
 
-const Tags = () => {
+const Tags = ({ onSelectTag }) => {
     return (
         <TagsStyle>
             <p>Search for tags:</p>
 
             <TagsWraper>
-                {tags.map(tag => <TagButton key={tag.id}>{tag.title}</TagButton>)}
+                {tags.map(tag => {
+                    return (
+                        <TagButton
+                            key={tag.id}
+                            onClick={() => onSelectTag(tag)}
+                        >
+                            {tag.title}
+                        </TagButton>
+                    )
+                })}
             </TagsWraper>
         </TagsStyle>
     );

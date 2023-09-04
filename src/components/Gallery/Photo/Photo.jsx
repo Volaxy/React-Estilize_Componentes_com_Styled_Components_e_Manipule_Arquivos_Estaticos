@@ -13,6 +13,7 @@ const PhotoStyle = styled.figure`
 
     img {
         width: 100%;
+        max-height: 40rem;
 
         object-fit: cover;
     }
@@ -22,7 +23,7 @@ const PhotoStyle = styled.figure`
         
         position: absolute;
         top: 1rem;
-        right: 1rem;
+        ${props => props.$isExpandedPhoto ? "left" : "right"}: 1rem;
 
         border-radius: 10px;
         padding: 0.5rem 1rem;
@@ -71,7 +72,7 @@ const PhotoStyle = styled.figure`
 
 const Photo = ({ photo, isExpandedPhoto, onFavoritePhoto, onExpandPhoto }) => {
     return (
-        <PhotoStyle>
+        <PhotoStyle $isExpandedPhoto={isExpandedPhoto}>
             <img src={photo.path} alt="" />
 
             <div className="tag">{tags.find(tag => tag.id === photo.tagId)?.title}</div>

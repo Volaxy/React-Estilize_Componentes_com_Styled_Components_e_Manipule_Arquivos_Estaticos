@@ -10,6 +10,15 @@ URL do curso -> [React: Estilize Componentes com Styled Components e Manipule Ar
 
 ![React: Estilize Componentes com Styled Components e Manipule Arquivos Estáticos](https://www.alura.com.br/assets/api/share/curso-react-estilize-componentes-styled-components-manipule-arquivos-estaticos.png)
 
+## :computer: Linguagens Usadas
+<div>
+    <img alt="HTML Logo" height="60" width="50" src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/html-5.svg" />&nbsp;
+    <img alt="CSS Logo" height="60" width="50" src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/css-3.svg" />&nbsp;
+    <img alt="JavaScript Logo" height="60" width="50" src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/javascript.svg" />
+    <img alt="JavaScript Logo" height="60" width="50" src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/react.svg" />
+    <img alt="JavaScript Logo" height="60" width="50" src="https://avatars.githubusercontent.com/u/20658825?s=200&v=4" />
+</div>
+
 ## Links Úteis &#x1F517;
 * [Design do Projeto](https://www.figma.com/file/2LFVvhAwy08j6kCaPcnOzs/SpaceApp-%7C-React%3A-arquivos-est%C3%A1ticos-com-integra%C3%A7%C3%A3o-de-conceito-%C3%A1rea-de-component?type=design&mode=design) - Protótipo do projeto feito no **Figma**.
 * [Imagens do Assets](https://github.com/alura-cursos/space-app/raw/main/assets.zip) - Imagens que serão usadas na pasta *assets*.
@@ -72,3 +81,9 @@ a {
 * Criar método de alternar favorito.
 * Aplicar filtro de tag e de pesquisa.
 * Criação do **Footer**.
+
+## :open_file_folder: Deploy da Aplicação :dash:
+[Aplicação Online](https://react-estilize-componentes-com-styled-components-e-manip-volaxy.vercel.app/) - Site hospedado na plataforma do **Vercel**.
+
+## :black_nib: Licença
+[Unlicense](https://unlicense.org)
